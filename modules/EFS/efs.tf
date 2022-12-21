@@ -9,7 +9,7 @@ resource "aws_kms_key" "ACS-kms" {
     {
       "Sid": "Enable IAM User Permissions",
       "Effect": "Allow",
-      "Principal": { "AWS": "arn:aws:iam::${var.account_no}:user/opeyemi" },
+      "Principal": { "AWS": "arn:aws:iam::${var.account_no}:user/Administrator" },
       "Action": "kms:*",
       "Resource": "*"
     }
@@ -20,7 +20,7 @@ EOF
 
 # create key alias
 resource "aws_kms_alias" "alias" {
-  name          = "alias/kms"
+  # name          = "alias/kms"
   target_key_id = aws_kms_key.ACS-kms.key_id
 }
 
@@ -97,4 +97,3 @@ resource "aws_efs_access_point" "tooling" {
 
   }
 }
-
