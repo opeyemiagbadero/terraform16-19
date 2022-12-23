@@ -3,7 +3,7 @@
 #########################
 
 resource "aws_s3_bucket" "terraform-state" {
-  bucket        = "opeyemipbl18-dev-terraform-bucket"
+  bucket        = "opeyemi-dev-terraform-bucket"
   force_destroy = true
 }
 resource "aws_s3_bucket_versioning" "version" {
